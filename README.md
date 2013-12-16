@@ -24,12 +24,12 @@ within your app to trigger the payment flow.
 Here’s a sample app that calls into the Chrome IAP API and provides options 
 to trigger payments via the sandbox server as well as the production server:
 
-*INSERT LINK HERE*
+https://github.com/petele/IAPDemo
 
 The above sample app has been published on the webstore - you can install it 
 on Chrome and try out the in-app-payment flows:
 
-*INSERT LINK HERE*
+https://chrome.google.com/webstore/detail/ljlieglfhapnokhlghnjbhlnkeehdgao
 
 When testing with the sandbox, you can use the following credit card numbers, 
 which pass basic checks by the Google Wallet for digital goods system:

@@ -4,7 +4,6 @@ var statusDiv;
 function init() {
   console.log("App Init");
   statusDiv = $("#status");
-  $("#env").change(changeEnv);
   getProductList();
 }
 
@@ -16,7 +15,7 @@ function getProductList() {
   console.log("google.payments.inapp.getSkuDetails");
   statusDiv.text("Retreiving list of available products...");
   google.payments.inapp.getSkuDetails({
-    'parameters': {env: $("#env").val()},
+    'parameters': {env: "prod"},
     'success': onSkuDetails,
     'failure': onSkuDetailsFailed
   });
@@ -47,7 +46,7 @@ function getLicenses() {
   console.log("google.payments.inapp.getPurchases");
   statusDiv.text("Retreiving list of purchased products...");
   google.payments.inapp.getPurchases({
-    'parameters': {env: $("#env").val()},
+    'parameters': {env: "prod"},
     'success': onLicenseUpdate,
     'failure': onLicenseUpdateFailed
   });
@@ -78,7 +77,7 @@ function buyProduct(sku) {
   console.log("google.payments.inapp.buy", sku);
   statusDiv.text("Kicking off purchase flow for " + sku);
   google.payments.inapp.buy({
-    parameters: {'env': $("#env").val()},
+    parameters: {'env': "prod"},
     'sku': sku,
     'success': onPurchase,
     'failure': onPurchaseFailed
@@ -152,11 +151,6 @@ function showLicense(license) {
   var modal = $("#modalLicense");
   modal.find(".license").text(JSON.stringify(license, null, 2));
   modal.modal('show');
-}
-
-function changeEnv() {
-  $("tbody").html("");
-  getProductList();
 }
 
 init();

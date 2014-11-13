@@ -1,43 +1,13 @@
-# Managed In App Payments
+# Managed In-App Payments with Google Wallet and the Chrome Web Store API
 
-## Overview of Chrome In App Payments API
-
-You can use the Chrome In-App Payments API (Chrome IAP API) to sell digital 
-and virtual goods within a Chrome App. When you use the Chrome IAP API, the 
+You can use (managed in-app payments with Google Wallet and the Chrome Web Store API)[https://developer.chrome.com/webstore/payments-iap] to sell virtual
+goods within a Chrome App. When you use managed in-app payments, the
 Chrome In-App Payments Service (embedded in Chrome) communicates with:
  * The Chrome Web Store to get the list of available products, including:
    * Items available for purchase
    * Items purchased by the user
  * The Google Wallet servers to handle all the required checkout details.
 
-This means that you do not need to handle inventory, licesning, or process 
-any financial transactions. The actual integration work to enable in app 
-payments is similar to using the 
-[Google Wallet for Digital Goods API](https://developers.google.com/commerce/wallet/digital/docs/) (now deprecated)
-for websites except that the Chrome IAP API requires you to embed a piece of 
-JavaScript ([buy.js](https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js)) 
-within your app to trigger the payment flow.
+This means that you can easily manage your virtual good inventory and licensing through the Chrome Web Store Developer Dashboard, and the Chrome Web Store will take care of the nitty gritty details, including financial transaction processing.
 
-## Sample app
-Here’s a sample app that calls into the Chrome IAP API and provides options 
-to trigger payments via the sandbox server as well as the production server:
-
-https://github.com/petele/IAPDemo
-
-The above sample app has been published on the webstore - you can install it 
-on Chrome and try out the in-app-payment flows:
-
-https://chrome.google.com/webstore/detail/ljlieglfhapnokhlghnjbhlnkeehdgao
-
-When testing with the sandbox, you can use the following credit card numbers, 
-which pass basic checks by the Google Wallet for Digital Goods system:
-
-https://developers.google.com/commerce/wallet/digital/docs/testing
-
-
-*Note*: If you want to test this app with a list of pre-populated items to 
-sell, you will need to set the key in the manifest the value listed below. 
-
-```
-"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoUq1cKlKbPLfHlA+x/eTxPA5ZSz4bd/fgKInayClJQTc6RRATDfRshCXjn8Eu7VpgsfEG3nLGD0C+8SdDxSGxj51k5elLRcRhDLODjxMshjPpziRm8wxalrGDEVOjD8GX6DG1YXQDMq6Hd9fxSj/ZEBjGvDWtoL3wBZ1M2/+aop/5Z6y9rQDOKI8PmCaIpWmIBS1+zZub9wc/RVNA2glGaSb0N71FxN/W5PhlWwJciG/iIJHhCM888kIPODJq8JgFKz1jO8/3L8YfO9/lzbKZLPnRMrN5q5KZDbG22l6BccSXnqYu4JX9RzXK0HcRzO5SI1l5XPAeZAhNY5M+rZULwIDAQAB"
-```
+The actual integration work to enable managed in-app payments is similar to using the [Google Wallet for Digital Goods API](https://developers.google.com/commerce/wallet/digital/docs/) (now deprecated), except that managed in-app payments require you to embed a piece of JavaScript ([buy.js](https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js)) within your app to trigger the payment flow.
